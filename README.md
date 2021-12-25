@@ -1,12 +1,13 @@
-# SGE - Sistema de Gestión Empresarial
+## Sistema de Gestión Empresarial
 
-Sistema ERP
+Sistema ERP para pequeñas empresas, adaptable
 
-# Versión Estable (Falta revisión QA) v2.7
+### Versión Estable v1.0
 
-Última revisión QA: 15/09/2021
+### A nombre de BalamXCode
 
-## BalamXCode - Daniel Estuardo Rivas Herrera, Stefanny Gabriela Gudiel Hernández
+Involucrados:
+- Daniel Estuardo Rivas Herrera
+- Stefanny Gabriela Gudiel Hernández
 
-
-### 04/09/2021 -> 24/12/2021
+#### 04/09/2021 -> 24/12/2021
