@@ -10,4 +10,4 @@ Involucrados:
 - Daniel Estuardo Rivas Herrera
 - Stefanny Gabriela Gudiel Hernández
 
-#### 04/09/2021 -> 24/12/2021
+#### 04/09/2021 -> 27/12/2021
