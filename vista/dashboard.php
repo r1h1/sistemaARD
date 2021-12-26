@@ -1,7 +1,9 @@
 <?php
   session_start();
   error_reporting(0);
+
   $varsesion = $_SESSION['usuario'];
+  $nombreLog = $_SESSION['usuario'];
 
   if($varsesion == null || $varsesion = ''){
     echo'<script type="text/javascript">
@@ -9,6 +11,11 @@
     </script>';
     die();
   }
+
+  date_default_timezone_set('America/Guatemala');
+  $sFechaActual = date("d") . "/" . date("m") . "/" . date("Y");
+  $horaActual = date('h:i A');
+
 ?>
 
 <!doctype html>
@@ -40,13 +47,13 @@
        <!-- Sidebar -->
        <div id="sidebar-container" class="bg-primary">
             <div class="logo">
-                <h4 class="text-light p-2">Software de gestión <br> Empresarial | v1.0</ion-icon>
+                <h4 class="text-light p-2">Software de gestión <br> Empresarial</ion-icon>
                 </h4>
-                <p class="p-2 text-light">© SGE, BalamXCode, 2021.</p>
+                <p class="p-2 text-light">SGE, BalamXCode</p>
             </div>
             <div class="menu">
                 <a href="../vista/dashboard.php" class="d-block text-secondary bg-light p-3">
-                    <ion-icon name="color-palette"></ion-icon> Dashboard
+                    <ion-icon name="color-palette"></ion-icon> Inicio
                 </a>
                 <br>
                 <div class="p-3">
@@ -86,10 +93,6 @@
                         <ion-icon name="people"></ion-icon> Clientes
                     </a>                    
 
-                    <a href="../vista/creditoClientes.php" class="d-block text-light p-2">
-                        <ion-icon name="card"></ion-icon> Crédito de Clientes
-                    </a>
-
                 </div>
 
 
@@ -128,17 +131,37 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="form-inline position-relative d-inline-block my-4">
-              <input class="form-control" type="search" placeholder="Empresa | 'ARD'" aria-label="Buscar" disabled>
+              <?php
+              
+                include("../controlador/csBDDCon.php");
+
+                //SE TRAE DATOS DE LA EMPRESA
+                $sql = "SELECT Empresa_Nombre FROM `empresa`";
+                $result = mysqli_query($conexion, $sql);
+                while ($mostrar = mysqli_fetch_array($result)) {
+                    $nombreEmpresa = $mostrar['Empresa_Nombre'];
+                }
+
+                //SE TRAE EL NOMBRE DEL EMPLEADO ASIGNADO AL USUARIO
+                $sql = "SELECT Nombre_Usuario_Ard FROM login_ard WHERE Usuario_Ard = '$nombreLog'";
+                $result = mysqli_query($conexion, $sql);
+                while ($mostrar = mysqli_fetch_array($result)) {
+                    $nombreUsuario = $mostrar['Nombre_Usuario_Ard'];
+                }
+
+                mysqli_free_result($result);
+                clearstatcache();
+              
+              ?>
+              <input class="form-control" type="search" aria-label="Buscar" value="<?php echo $nombreEmpresa?>" readonly>
               <button class="btn position-absolute btn-search" type="submit"></button>
             </form>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
               <li class="nav-item dropdown">
                 <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="http://cdn.onlinewebfonts.com/svg/img_569193.png" class="img-fluid rounded-circle avatar mr-2" alt="https://generated.photos/" />
                   Opciones SGE
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="https://wa.me/50245024363?text=DISTRIBUIDORA%20ARD,%20SISTEMA%20DE%20GESTION%20EMPRESARIAL%20EST%C3%81%20DANDO%20ERRORES,%20POR%20FAVOR%20DARME%20SOPORTE,%20GRACIAS!" target="_blank">Chatea con Soporte</a>
                   <a class="dropdown-item" href="../controlador/login/cerrarSesion.php">Cerrar sesión</a>
                 </div>
               </li>
@@ -156,7 +179,8 @@
             <div class="row">
               <div class="col-lg-9 col-md-8">
                 <h1 class="font-weight-bold mb-0">Dashboard</h1><br>
-                <p class="lead text-muted">Bienvenido, <?php echo $_SESSION["usuario"]?>,<br>¡Hoy es un buen día para lograr lo que deseas!</p>
+                <p class="lead text-muted">¡Bienvenido/a <?php echo $nombreUsuario?>!<br><br>Fecha de Ingreso - <?php echo $sFechaActual?> 
+                <br> Hora de Ingreso - <?php echo $horaActual?></p>
                 <br>
                 <p class="text-muted">Puedes consultar el menú de opciones que tenemos <br> para  que  puedas trabajar en los distintos módulos.</p>
               </div>
@@ -173,7 +197,7 @@
                   <div class="col-lg-5 col-md-6 d-flex stat my-3">
                     <div class="mx-auto">
                       <h6 class="text-muted">Recursos Humanos</h6>
-                      <a class="font-weight-bold text-dark" href="../vista/planilla.php">Planilla ARD</a>
+                      <a class="font-weight-bold text-dark" href="../vista/planilla.php">Planilla</a>
                     </div>
                   </div>
                   <div class="col-lg-5 col-md-6 d-flex stat my-3">
@@ -199,9 +223,8 @@
                   <div class="col-lg-5 col-md-6 d-flex my-3">
                     <div class="mx-auto">
                       <h6 class="text-muted">Clientes Empresa</h6>
-                      <a class="font-weight-bold text-dark" href="../vista/clientes.php">Clientes ARD</a><br>
+                      <a class="font-weight-bold text-dark" href="../vista/clientes.php">Clientes</a><br>
                       <a class="font-weight-bold text-dark" href="../vista/sectorizacionClientes.php">Sectorización (Rutas)</a><br>
-                      <a class="font-weight-bold text-dark" href="../vista/creditoClientes.php">Crédito de Clientes</a><br>
                     </div>
                   </div>
                   <div class="col-lg-5 col-md-6 d-flex my-3">

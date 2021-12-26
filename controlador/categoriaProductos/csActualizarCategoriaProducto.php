@@ -8,11 +8,11 @@ $id = $_POST["txtid"];
 $sNCategoria = $_POST["nCategoria"];
 $sDescripcion = $_POST["descripcion"];
 
-if ($sNCategoria !=null && $sDescripcion !=null) {
+if ($sNCategoria !="" && $sDescripcion !="") {
 
     //SI TODO OKAY, SE PROCEDE A HACER LA CONEXIÓN
-    $consulta = "UPDATE `categoria_productos_ard` SET `CategoriaProducto_Nombre`='$sNCategoria',
-    `CategoriaProducto_Descripcion`='$sDescripcion' WHERE IdCategoriaProducto='$id'";
+    $consulta = "UPDATE `categoria_productos_ard` SET `CategoriaP_Nombre`='$sNCategoria',
+    `CategoriaP_Descripcion`='$sDescripcion' WHERE IdCategoriaProducto='$id'";
 
     $resultado = mysqli_query($conexion, $consulta);
 
@@ -20,7 +20,7 @@ if ($sNCategoria !=null && $sDescripcion !=null) {
     //SI LOS DATOS COINCIDEN, SE REDIRIGE AL DASHBOARD
     if ($resultado == 1) {
         echo '<script type="text/javascript">
-            alert("Empleado Editado correctamente");
+            alert("Editado correctamente");
             window.location.href="../../vista/categoriaProductos.php";
         </script>';
         mysqli_close($conexion);

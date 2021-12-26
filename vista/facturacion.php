@@ -62,16 +62,16 @@ if ($varsesion == null || $varsesion = '') {
 
     <div class="d-flex" id="content-wrapper">
 
-        <!-- Sidebar -->
-        <div id="sidebar-container" class="bg-primary">
+       <!-- Sidebar -->
+   <div id="sidebar-container" class="bg-primary">
             <div class="logo">
-                <h4 class="text-light p-2">Software de gestión <br> Empresarial | v1.0</ion-icon>
+                <h4 class="text-light p-2">Software de gestión <br> Empresarial</ion-icon>
                 </h4>
-                <p class="p-2 text-light">© SGE, BalamXCode, 2021.</p>
+                <p class="p-2 text-light">SGE, BalamXCode</p>
             </div>
             <div class="menu">
                 <a href="../vista/dashboard.php" class="d-block text-secondary bg-light p-3">
-                    <ion-icon name="color-palette"></ion-icon> Dashboard
+                    <ion-icon name="color-palette"></ion-icon> Inicio
                 </a>
                 <br>
                 <div class="p-3">
@@ -91,7 +91,7 @@ if ($varsesion == null || $varsesion = '') {
                     <a href="../vista/proveedores.php" class="d-block text-light p-2">
                         <ion-icon name="cube"></ion-icon> Proveedores
                     </a>
-
+                   
                     <a href="../vista/categoriaProductos.php" class="d-block text-light p-2">
                         <ion-icon name="filing"></ion-icon> Categoría de Productos
                     </a>
@@ -109,11 +109,7 @@ if ($varsesion == null || $varsesion = '') {
 
                     <a href="../vista/clientes.php" class="d-block text-light p-2">
                         <ion-icon name="people"></ion-icon> Clientes
-                    </a>
-
-                    <a href="../vista/creditoClientes.php" class="d-block text-light p-2">
-                        <ion-icon name="card"></ion-icon> Crédito de Clientes
-                    </a>
+                    </a>                    
 
                 </div>
 
@@ -128,7 +124,7 @@ if ($varsesion == null || $varsesion = '') {
                     <a href="../vista/facturacion.php" class="d-block text-light p-2">
                         <ion-icon name="cart"></ion-icon> Facturar / Vender
                     </a>
-
+                    
                     <a href="../vista/reporteVentas.php" class="d-block text-light p-2">
                         <ion-icon name="grid"></ion-icon> Reporte de Ventas
                     </a>
@@ -141,24 +137,40 @@ if ($varsesion == null || $varsesion = '') {
         </div>
         <!-- Fin sidebar -->
 
-        <div class="bg-light w-100">
+    <div class="w-100">
 
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
 
-                    <div class="navbar" id="">
-                        <ul class="navbar-nav">
-                            <li class="nav-item text-left ml-auto">
-                                <a class="btn btn-danger ml-auto" href="../controlador/login/cerrarSesion.php" id="cerrarSesion" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Cerrar Sesión</a>
-                            </li>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Fin Navbar -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline position-relative d-inline-block my-4">
+              <?php
+              
+                include("../controlador/csBDDCon.php");
+
+                //SE TRAE DATOS DE LA EMPRESA
+                $sql = "SELECT Empresa_Nombre FROM `empresa`";
+                $result = mysqli_query($conexion, $sql);
+                while ($mostrar = mysqli_fetch_array($result)) {
+                    $nombreEmpresa = $mostrar['Empresa_Nombre'];
+                }
+              
+              ?>
+              <input class="form-control" type="search" aria-label="Buscar" value="<?php echo $nombreEmpresa?>" readonly>
+              <button class="btn position-absolute btn-search" type="submit"></button>
+            </form>
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <a class="dropdown-item" href="../controlador/login/cerrarSesion.php">Cerrar sesión</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Fin Navbar -->
 
             <!-- Page Content -->
             <div id="content" class="bg-light w-100">

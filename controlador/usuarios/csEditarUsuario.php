@@ -175,11 +175,27 @@
 
                                             ?>
                                                 <form class="row g-3" action="../usuarios/csActualizarUsuario.php" method="post">
-                                                        <input type="hidden" class="form-control" name="txtid" value="<?php echo $datos['IdUsuario'] ?>">
+                                                    <input type="hidden" class="form-control" name="txtid" value="<?php echo $datos['IdUsuario'] ?>">
 
                                                     <div class="col-md-6 py-2">
-                                                        <label for="inputEmail4" class="form-label">Nombre de Usuario</label>
-                                                        <input type="text" class="form-control" name="nasignado" value="<?php echo $datos['Nombre_Usuario_Ard'] ?>" maxlength="20">
+                                                        <label for="" class="form-label">Empleado a Asignar <span class="red" style="color: red;">*</span></label>
+                                                        <select class="form-control" id="nombreusuario" name="nasignado" required>
+                                                            <option value="<?php echo $datos['Nombre_Usuario_Ard'] ?>"><?php echo $datos['Nombre_Usuario_Ard'] ?></option>
+                                                            <?php
+                                                            include("../controlador/csBDDCon.php");
+
+                                                            $query = "SELECT CONCAT(Empleado_PrimerNombre,' ',Empleado_PrimerApellido) FROM `planilla_ard`";
+                                                            $ejecutar = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
+                                                            ?>
+
+                                                            <?php foreach ($ejecutar as $opciones) : ?>
+
+                                                            <option value="<?php echo $opciones["CONCAT(Empleado_PrimerNombre,' ',Empleado_PrimerApellido)"] ?>">
+                                                            <?php echo $opciones["CONCAT(Empleado_PrimerNombre,' ',Empleado_PrimerApellido)"] ?></option>
+                                                            <?php endforeach;
+                                                            clearstatcache();
+                                                            mysqli_free_result($ejecutar);?>
+                                                        </select>
                                                     </div>
 
                                                     <div class="col-md-6 py-2">
@@ -210,6 +226,7 @@
                                                 </form>
                                             <?php
                                             }
+                                            clearstatcache();
                                             ?>
                                         </div>
                                     </div>

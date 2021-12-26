@@ -1,1 +1,26 @@
-@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);*{margin:0;padding:0;box-sizing:border-box;font-family:Roboto,sans-serif;overflow:hidden}.login{min-height:100vh}body{background-color:#f7f7f7}.bg-image{background-image:url(https://i.ibb.co/pyQtn6R/photo-1571171637578-41bc2dd41cd2.jpg);background-size:cover;background-position:center}.login-heading{font-weight:200}.btn-login{font-size:20px;letter-spacing:.7px}
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    overflow: hidden;
+}
+.login {
+    min-height: 100vh;
+}
+body {
+    background-color: #f7f7f7;
+}
+.bg-image {
+    background-image: url(https://hdwallpaperim.com/wp-content/uploads/2017/08/24/107862-server-dark-computer-data_center-748x499.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.login-heading {
+    font-weight: 200;
+}
+.btn-login {
+    font-size: 20px;
+    letter-spacing: 0.7px;
+}

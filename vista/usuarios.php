@@ -1,14 +1,14 @@
 <?php
-  session_start();
-  error_reporting(0);
-  $varsesion = $_SESSION['usuario'];
+session_start();
+error_reporting(0);
+$varsesion = $_SESSION['usuario'];
 
-  if($varsesion == null || $varsesion = ''){
-    echo'<script type="text/javascript">
+if ($varsesion == null || $varsesion = '') {
+  echo '<script type="text/javascript">
             window.location.href="../controlador/error/nolog.php";
     </script>';
-    die();
-  }
+  die();
+}
 ?>
 
 <!doctype html>
@@ -37,83 +37,80 @@
 <body>
   <div class="d-flex" id="content-wrapper">
 
-   <!-- Sidebar -->
-   <div id="sidebar-container" class="bg-primary">
-            <div class="logo">
-                <h4 class="text-light p-2">Software de gestión <br> Empresarial | v1.0</ion-icon>
-                </h4>
-                <p class="p-2 text-light">© SGE, BalamXCode, 2021.</p>
-            </div>
-            <div class="menu">
-                <a href="../vista/dashboard.php" class="d-block text-secondary bg-light p-3">
-                    <ion-icon name="color-palette"></ion-icon> Dashboard
-                </a>
-                <br>
-                <div class="p-3">
-                    <p class="d-block text-secondary"><ins>Módulo IT</ins></p>
-                    <a href="../vista/usuarios.php" class="d-block text-light p-2">
-                        <ion-icon name="contact"></ion-icon> Usuarios
-                    </a>
-                </div>
-                <div class="p-3">
-                    <p class="d-block text-secondary"><ins>Módulo RRHH</ins></p>
-                    <a href="../vista/planilla.php" class="d-block text-light p-2">
-                        <ion-icon name="person-add"></ion-icon> Planilla
-                    </a>
-                </div>
-                <div class="p-3">
-                    <p class="d-block text-secondary"><ins>Módulo Logística</ins></p>
-                    <a href="../vista/proveedores.php" class="d-block text-light p-2">
-                        <ion-icon name="cube"></ion-icon> Proveedores
-                    </a>
-                   
-                    <a href="../vista/categoriaProductos.php" class="d-block text-light p-2">
-                        <ion-icon name="filing"></ion-icon> Categoría de Productos
-                    </a>
-
-                    <a href="../vista/inventario.php" class="d-block text-light p-2">
-                        <ion-icon name="list-box"></ion-icon> Inventario
-                    </a>
-                </div>
-                <div class="p-3">
-                    <p class="d-block text-secondary"><ins>Módulo Clientes</ins></p>
-
-                    <a href="../vista/sectorizacionClientes.php" class="d-block text-light p-2">
-                        <ion-icon name="map"></ion-icon> Sectorización Clientes (Rutas)
-                    </a>
-
-                    <a href="../vista/clientes.php" class="d-block text-light p-2">
-                        <ion-icon name="people"></ion-icon> Clientes
-                    </a>                    
-
-                    <a href="../vista/creditoClientes.php" class="d-block text-light p-2">
-                        <ion-icon name="card"></ion-icon> Crédito de Clientes
-                    </a>
-                </div>
-
-
-                <div class="p-3">
-                    <p class="d-block text-secondary"><ins>Módulo Ventas</ins></p>
-
-                    <a href="../vista/metodoPago.php" class="d-block text-light p-2">
-                        <ion-icon name="cash"></ion-icon> Métodos de Pago
-                    </a>
-
-                    <a href="../vista/facturacion.php" class="d-block text-light p-2">
-                        <ion-icon name="cart"></ion-icon> Facturar / Vender
-                    </a>
-                    
-                    <a href="../vista/reporteVentas.php" class="d-block text-light p-2">
-                        <ion-icon name="grid"></ion-icon> Reporte de Ventas
-                    </a>
-
-                    <a href="../vista/facturas.php" class="d-block text-light p-2">
-                        <ion-icon name="grid"></ion-icon> Facturas
-                    </a>
-                </div>
-            </div>
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="bg-primary">
+      <div class="logo">
+        <h4 class="text-light p-2">Software de gestión <br> Empresarial</ion-icon>
+        </h4>
+        <p class="p-2 text-light">SGE, BalamXCode</p>
+      </div>
+      <div class="menu">
+        <a href="../vista/dashboard.php" class="d-block text-secondary bg-light p-3">
+          <ion-icon name="color-palette"></ion-icon> Inicio
+        </a>
+        <br>
+        <div class="p-3">
+          <p class="d-block text-secondary"><ins>Módulo IT</ins></p>
+          <a href="../vista/usuarios.php" class="d-block text-light p-2">
+            <ion-icon name="contact"></ion-icon> Usuarios
+          </a>
         </div>
-        <!-- Fin sidebar -->
+        <div class="p-3">
+          <p class="d-block text-secondary"><ins>Módulo RRHH</ins></p>
+          <a href="../vista/planilla.php" class="d-block text-light p-2">
+            <ion-icon name="person-add"></ion-icon> Planilla
+          </a>
+        </div>
+        <div class="p-3">
+          <p class="d-block text-secondary"><ins>Módulo Logística</ins></p>
+          <a href="../vista/proveedores.php" class="d-block text-light p-2">
+            <ion-icon name="cube"></ion-icon> Proveedores
+          </a>
+
+          <a href="../vista/categoriaProductos.php" class="d-block text-light p-2">
+            <ion-icon name="filing"></ion-icon> Categoría de Productos
+          </a>
+
+          <a href="../vista/inventario.php" class="d-block text-light p-2">
+            <ion-icon name="list-box"></ion-icon> Inventario
+          </a>
+        </div>
+        <div class="p-3">
+          <p class="d-block text-secondary"><ins>Módulo Clientes</ins></p>
+
+          <a href="../vista/sectorizacionClientes.php" class="d-block text-light p-2">
+            <ion-icon name="map"></ion-icon> Sectorización Clientes (Rutas)
+          </a>
+
+          <a href="../vista/clientes.php" class="d-block text-light p-2">
+            <ion-icon name="people"></ion-icon> Clientes
+          </a>
+
+        </div>
+
+
+        <div class="p-3">
+          <p class="d-block text-secondary"><ins>Módulo Ventas</ins></p>
+
+          <a href="../vista/metodoPago.php" class="d-block text-light p-2">
+            <ion-icon name="cash"></ion-icon> Métodos de Pago
+          </a>
+
+          <a href="../vista/facturacion.php" class="d-block text-light p-2">
+            <ion-icon name="cart"></ion-icon> Facturar / Vender
+          </a>
+
+          <a href="../vista/reporteVentas.php" class="d-block text-light p-2">
+            <ion-icon name="grid"></ion-icon> Reporte de Ventas
+          </a>
+
+          <a href="../vista/facturas.php" class="d-block text-light p-2">
+            <ion-icon name="grid"></ion-icon> Facturas
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Fin sidebar -->
 
     <div class="w-100">
 
@@ -127,18 +124,27 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="form-inline position-relative d-inline-block my-4">
-              <input class="form-control" type="search" placeholder="Empresa | 'ARD'" aria-label="Buscar" disabled>
+              <?php
+
+              include("../controlador/csBDDCon.php");
+
+              //SE TRAE DATOS DE LA EMPRESA
+              $sql = "SELECT Empresa_Nombre FROM `empresa`";
+              $result = mysqli_query($conexion, $sql);
+              while ($mostrar = mysqli_fetch_array($result)) {
+                $nombreEmpresa = $mostrar['Empresa_Nombre'];
+              }
+
+              ?>
+              <input class="form-control" type="search" aria-label="Buscar" value="<?php echo $nombreEmpresa ?>" readonly>
               <button class="btn position-absolute btn-search" type="submit"></button>
             </form>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
               <li class="nav-item dropdown">
                 <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="http://cdn.onlinewebfonts.com/svg/img_569193.png" class="img-fluid rounded-circle avatar mr-2" alt="https://generated.photos/" />
                   Opciones SGE
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="../vista/dashboard.php">Inicio</a>
-                  <a class="dropdown-item" href="https://wa.me/50245024363?text=DISTRIBUIDORA%20ARD,%20SISTEMA%20DE%20GESTION%20EMPRESARIAL%20EST%C3%81%20DANDO%20ERRORES,%20POR%20FAVOR%20DARME%20SOPORTE,%20GRACIAS!" target="_blank">Chatea con Soporte</a>
                   <a class="dropdown-item" href="../controlador/login/cerrarSesion.php">Cerrar sesión</a>
                 </div>
               </li>
@@ -156,8 +162,8 @@
             <div class="row">
               <div class="col-lg-9 col-md-8">
                 <h1 class="font-weight-bold mb-0">Usuarios</h1><br>
+              </div>
             </div>
-          </div>
         </section>
 
         <section class="bg-mix py-3">
@@ -169,28 +175,46 @@
                     <div class="mx-auto">
                       <p class="lead text-muted py-3">Ingreso de Datos:</p>
                       <form class="row g-3" action="../controlador/usuarios/csInsertarUsuarios.php" method="POST">
+
                         <div class="col-md-6 py-2">
-                          <label for="inputEmail4" class="form-label">Nombre de Usuario <span class = "red" style="color: red;">*</span></label>
-                          <input type="text" class="form-control" name="nasignado" placeholder="Ej: Salvador Herrera" required>
+                          <label for="" class="form-label">Empleado a Asignar <span class="red" style="color: red;">*</span></label>
+                          <select class="form-control" id="nombreusuario" name="nasignado" required>
+                            <option value="">Seleccione Uno...</option>
+                            <?php
+                            include("../controlador/csBDDCon.php");
+
+                            $query = "SELECT CONCAT(Empleado_PrimerNombre,' ',Empleado_PrimerApellido) FROM `planilla_ard`";
+                            $ejecutar = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
+                            ?>
+
+                            <?php foreach ($ejecutar as $opciones) : ?>
+
+                              <option value="<?php echo $opciones["CONCAT(Empleado_PrimerNombre,' ',Empleado_PrimerApellido)"] ?>">
+                              <?php echo $opciones["CONCAT(Empleado_PrimerNombre,' ',Empleado_PrimerApellido)"] ?></option>
+                            <?php endforeach;
+                            clearstatcache();
+                            mysqli_free_result($ejecutar);?>
+                          </select>
+                        </div>
+
+                        <div class="col-md-6 py-2">
+                          <label for="inputPassword4" class="form-label">Usuario Asignado <span class="red" style="color: red;">*</span></label>
+                          <input type="text" class="form-control" name="nombreusuario" placeholder="Ej: sherrera" required>
                         </div>
                         <div class="col-md-6 py-2">
-                          <label for="inputPassword4" class="form-label">Usuario Asignado <span class = "red" style="color: red;">*</span></label>
-                          <input type="text" class="form-control" name="nombreusuario" placeholder="Ej: sherrera" required> 
-                        </div>
-                        <div class="col-md-6 py-2">
-                          <label for="inputAddress" class="form-label">Contraseña <span class = "red" style="color: red;">*</span></label>
+                          <label for="inputAddress" class="form-label">Contraseña <span class="red" style="color: red;">*</span></label>
                           <input type="text" class="form-control" name="contrasena" placeholder="Ej: 12345" required>
                         </div>
 
                         <div class="col-md-6 py-2">
-                          <label for="inputCity" class="form-label">Permiso a Asignar <span class = "red" style="color: red;">*</span></label>
-                              <select class="form-control" id="rol" name="permiso" required>
-                                <option value="">Seleccione uno...</option>
-                                <option value="admin">Administrador</option>
-                                <option value="logistica">Logistica</option>
-                                <option value="rrhh">Recursos Humanos</option>
-                                <option value="ventas">Ventas</option>
-                              </select>
+                          <label for="inputCity" class="form-label">Permiso a Asignar <span class="red" style="color: red;">*</span></label>
+                          <select class="form-control" id="rol" name="permiso" required>
+                            <option value="">Seleccione uno...</option>
+                            <option value="admin">Administrador</option>
+                            <option value="logistica">Logistica</option>
+                            <option value="rrhh">Recursos Humanos</option>
+                            <option value="ventas">Ventas</option>
+                          </select>
                         </div>
 
                         <div class="col-md-6 py-3">
@@ -217,11 +241,14 @@
                       <p class="lead text-muted py-3">Visualización de Datos:</p>
                       <div class="col-md-8 input-group mb-5">
                         <form action="" method="GET">
-                          <input type="text" class="form-control" placeholder="Buscar Registros"
-                          aria-label="Buscar Registros" id="inputbuscar" name="busqueda">
-                          <button type="submit"  class="btn btn-light" id="search" name="buscar"><ion-icon name="search" style="font-size: 20px"></ion-icon></button>
+                          <input type="text" class="form-control" placeholder="Buscar Registros" aria-label="Buscar Registros" id="inputbuscar" name="busqueda">
+                          <button type="submit" class="btn btn-light" id="search" name="buscar">
+                            <ion-icon name="search" style="font-size: 20px"></ion-icon>
+                          </button>
                         </form>
-                        <a href="../vista/usuarios" type="submit"  class="btn btn-success" id="return" name="return"><ion-icon name="clipboard" style="font-size: 20px"></ion-icon></a>
+                        <a href="../vista/usuarios" type="submit" class="btn btn-success" id="return" name="return">
+                          <ion-icon name="clipboard" style="font-size: 20px"></ion-icon>
+                        </a>
                       </div>
                       <thead>
                         <tr>

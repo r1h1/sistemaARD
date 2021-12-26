@@ -34,4 +34,6 @@ else{
     </script>';
     mysqli_close($conexion);
 }
+
+clearstatcache();
 ?>
