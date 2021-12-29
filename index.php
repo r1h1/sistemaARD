@@ -38,10 +38,10 @@
                                     <select class="form-control" id="rol" name="rol" required>
                                                         <option value="">Seleccione uno...</option>
                                                         <option value="admin">Administrador</option>
+                                                        <option value="it">Informática</option>
                                                         <option value="rrhh">Recursos Humanos</option>
                                                         <option value="logistica">Logistica</option>
                                                         <option value="ventas">Ventas</option>
-                                                        <option value="it">Logistica</option>
                                                     </select>
                                         <label for="floatingInput">Rol Asignado</label>
                                     </div>

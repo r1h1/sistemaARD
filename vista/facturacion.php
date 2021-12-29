@@ -165,7 +165,7 @@ if ($varsesion == null || $varsesion = '') {
               <button class="btn position-absolute btn-search" type="submit"></button>
             </form>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <a class="dropdown-item" href="../controlador/login/cerrarSesion.php">Cerrar sesión</a>
+            <a class="btn btn-danger"href="../controlador/login/cerrarSesion.php">Cerrar sesión</a>
             </ul>
           </div>
         </div>
@@ -495,6 +495,9 @@ if ($varsesion == null || $varsesion = '') {
             if (snit != "" && mPago != "" && idProductoVendido != "") {
 
                 if (mPago == "Efectivo") {
+
+                    var totalFactura = document.getElementById("totalFactura").value;
+                    $("#mTotalF").val(totalFactura);
 
                     $("#pagoEfectivo").modal("show");
 

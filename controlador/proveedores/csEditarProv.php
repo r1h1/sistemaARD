@@ -208,7 +208,7 @@
                                                 </div>
                                                 <div class="col-md-6 py-2">
                                                     <label for="inputTelefono" class="form-label">Email</label>
-                                                    <input type="email" class="form-control" name="email" maxlength="24" value="<?php echo $datos['Prov_Email'] ?>">
+                                                    <input type="email" class="form-control" name="email" maxlength="49" value="<?php echo $datos['Prov_Email'] ?>">
                                                 </div>
                                                 <div class="col-md-6 py-2">
                                                     <label for="inputSueldo" class="form-label">Presentaciones</label>

@@ -210,7 +210,7 @@
                                                 </div>
                                                 <div class="col-md-6 py-2">
                                                     <label for="inputTelefono" class="form-label">Email</label>
-                                                    <input type="email" class="form-control" placeholder="Ej: ej@gmail.com" maxlength="24" name="email">
+                                                    <input type="email" class="form-control" placeholder="Ej: ej@gmail.com" maxlength="49" name="email">
                                                 </div>
                                                 <div class="col-md-7 py-3">
                                                     <button type="submit" class="btn btn-success">Agregar Proveedor

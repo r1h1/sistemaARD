@@ -1,11 +1,3 @@
-#Cache de imágenes en el navegador durante un mes
-
-<FilesMatch "\.(ico|jpg|jpeg|png|gif)$">
-
-Header set Cache-Control "max-age=2592000, public"
-
-</FilesMatch>
-
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f

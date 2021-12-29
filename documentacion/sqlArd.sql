@@ -18,7 +18,7 @@ CREATE TABLE empresa(
 	IdEmpresa INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	Empresa_Nombre varchar(50) not null,
 	Empresa_NIT varchar(50) not null,
-	Empresa_Direccion varchar(250) not null,
+	Empresa_Direccion varchar(500) not null,
 	Empresa_Email varchar(50),
 	Empresa_Telefono int(11)
 );
@@ -35,47 +35,47 @@ CREATE TABLE planilla_ard(
 	Empleado_SegundoApellido varchar(50) not null,
 	Empleado_DPI numeric(20) not null,
 	Empleado_FechaNacimiento varchar(50) not null,
-	Empleado_Direccion varchar(250) not null,
+	Empleado_Direccion varchar(500) not null,
 	Empleado_Telefono numeric(15) not null,
-	Empleado_Puesto varchar(25) not null,
+	Empleado_Puesto varchar(50) not null,
 	Empleado_SueldoInicial numeric(30,2) not null,
 	Empleado_SueldoFinal numeric(30,2),
 	Empleado_JornadaLaboral varchar(50) not null,
-	Empleado_FechaContratacion varchar(25) not null,
-	Empleado_FechaRetiro varchar(25),
-	Empleado_MotivoRetiro varchar(25),
-	Empleado_Beneficios varchar(25) not null
+	Empleado_FechaContratacion varchar(50) not null,
+	Empleado_FechaRetiro varchar(50),
+	Empleado_MotivoRetiro varchar(50),
+	Empleado_Beneficios varchar(50) not null
 );
 
 
 CREATE TABLE proveedores_ard(
 	IdProveedor INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	Prov_Nombre varchar(50) not null,
-	Prov_Direccion varchar(250) not null,
+	Prov_Direccion varchar(500) not null,
 	Prov_NIT varchar(20) not null,
 	Prov_Telefono numeric(15) not null,
-	Prov_Email varchar(25),
-	Prov_Presentaciones varchar(25)
+	Prov_Email varchar(50),
+	Prov_Presentaciones varchar(50)
 );
 
 
 CREATE TABLE categoria_productos_ard(
 	IdCategoriaProducto INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	CategoriaP_Nombre varchar(50) not null,
-	CategoriaP_Descripcion varchar(250)
+	CategoriaP_Descripcion varchar(500)
 );
 
 
 CREATE TABLE inventario_ard(
 	IdProducto int primary key not null AUTO_INCREMENT,
 	Producto_Nombre varchar(50) not null,
-	Producto_Descripcion varchar(250) not null,
+	Producto_Descripcion varchar(500) not null,
 	Producto_PrecioCompra numeric(30,2) not null,
 	Producto_PrecioVenta numeric(30,2) not null,
 	Producto_Cantidad int not null,
-	Producto_Observaciones varchar(250),
-	Producto_FechaIngreso varchar(25),
-	Producto_FechaVencimiento varchar(25),
+	Producto_Observaciones varchar(500),
+	Producto_FechaIngreso varchar(50),
+	Producto_FechaVencimiento varchar(50),
 	Producto_IdProveedor int,
 	Producto_IdCategoria int,
     FOREIGN KEY (Producto_IdProveedor) REFERENCES proveedores_ard(IdProveedor),
@@ -87,13 +87,13 @@ CREATE TABLE inventario_ard(
 CREATE TABLE inventario_aux_ard(
 	IdProducto int primary key not null AUTO_INCREMENT,
 	Producto_Nombre varchar(50) not null,
-	Producto_Descripcion varchar(250) not null,
+	Producto_Descripcion varchar(500) not null,
 	Producto_PrecioCompra numeric(30,2) not null,
 	Producto_PrecioVenta numeric(30,2) not null,
 	Producto_Cantidad int not null,
-	Producto_Observaciones varchar(250),
-	Producto_FechaIngreso varchar(25),
-	Producto_FechaVencimiento varchar(25),
+	Producto_Observaciones varchar(500),
+	Producto_FechaIngreso varchar(50),
+	Producto_FechaVencimiento varchar(50),
 	Producto_IdProveedor int,
 	Producto_IdCategoria int,
     FOREIGN KEY (Producto_IdProveedor) REFERENCES proveedores_ard(IdProveedor),
@@ -113,7 +113,7 @@ CREATE TABLE sectorizacion_clientes_ard(
 	Sector_ModeloVehiculo varchar(50),
 	Sector_ColorVehiculo varchar(50),
 	Sector_PlacaVehiculo varchar(50),
-	Sector_ExplicacionRuta varchar(250)
+	Sector_ExplicacionRuta varchar(500)
 );
 
 
@@ -123,7 +123,7 @@ CREATE TABLE clientes_ard(
 	Cliente_Nombres varchar(80) not null,
 	Cliente_NIT varchar(20) not null,
 	Cliente_Apellidos varchar(80) not null,
-	Cliente_Direccion varchar(250) not null,
+	Cliente_Direccion varchar(500) not null,
 	Cliente_Telefono numeric(15) not null,
 	Cliente_Email varchar(50),
 	Cliente_Beneficios varchar(50),
@@ -169,10 +169,10 @@ CREATE TABLE ventas_auxiliar_ard(
 CREATE TABLE ventas_ard(
 	IdVenta int primary key not null AUTO_INCREMENT,
 	IdCorrelativoVenta int,
-	Venta_FechaVenta varchar(25) not null,
+	Venta_FechaVenta varchar(50) not null,
 	Venta_Total numeric(35,2) NOT NULL,
 	Venta_NITCliente varchar(18),
-	Venta_UsuarioVenta varchar(25),
+	Venta_UsuarioVenta varchar(50),
     Venta_IdTipoPago int,
     FOREIGN KEY (Venta_IdTipoPago) REFERENCES metodo_pago_ard(IdMetodoPago)
 );
